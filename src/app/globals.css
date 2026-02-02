@@ -120,3 +120,66 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Markdown content specific styles */
+.markdown-content {
+  line-height: 1.7;
+}
+
+.markdown-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-content > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Math equations */
+.katex-display {
+  overflow: auto hidden;
+  padding: 1rem 0;
+}
+
+.katex {
+  font-size: 1.1em;
+}
+
+/* Code block line numbers */
+pre code {
+  counter-reset: line;
+}
+
+pre code > span {
+  counter-increment: line;
+}
+
+pre code > span::before {
+  content: counter(line);
+  display: inline-block;
+  width: 2em;
+  margin-right: 1em;
+  text-align: right;
+  color: #6b7280;
+}
+
+/* Table of contents if you add it later */
+.toc {
+  position: sticky;
+  top: 2rem;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .markdown-content h1 {
+    font-size: 1.875rem !important;
+  }
+  
+  .markdown-content h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .markdown-content h3 {
+    font-size: 1.25rem !important;
+  }
+}
