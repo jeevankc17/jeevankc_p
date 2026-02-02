@@ -71,8 +71,8 @@ export default async function HomePage() {
             </span>
           </h1>
           <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-            A framework agnostic, principle first computer engineer, IT entrepreneur, and software developer from
-            Nepal with over half a decade of experience in building software and
+            A framework agnostic, principle first software engineer & IT entrepreneur from
+            Nepal with over half a decade of hands on experience in building software and
             shaping businesses.
           </p>
           <div className="flex flex-wrap gap-4 mt-4">
@@ -241,6 +241,7 @@ export default async function HomePage() {
                           year: "numeric",
                           month: "long",
                           day: "numeric",
+                          timeZone: 'UTC',
                         })}
                       </CardDescription>
                     </CardHeader>

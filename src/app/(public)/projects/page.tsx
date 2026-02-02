@@ -19,9 +19,11 @@ interface Project {
 async function getProjects(): Promise<Project[]> {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/projects`, {
-      next: { revalidate: 3600 },
+      cache: 'no-store' // Disable caching to see fresh data
     });
-    if (!res.ok) return [];
+    if (!res.ok) {
+      return [];
+    }
     const data = await res.json();
     return data.data;
   } catch (error) {
@@ -34,7 +36,7 @@ export default async function ProjectsPage() {
   const projects = await getProjects();
 
   return (
-    <main className="container py-12 md:py-20">
+    <main className="container py-12 md:py-20 mx-auto">
       <section className="text-center">
         <h1 className="text-4xl font-bold tracking-tight">My Projects</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -44,7 +46,7 @@ export default async function ProjectsPage() {
 
       <section className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center max-w-6xl mx-auto">
         {projects && projects.length > 0 ? (
-          projects.map((project) => {
+          projects.map((project, index) => {
             // Parse features and technologies safely
             let techList: string[] = [];
             

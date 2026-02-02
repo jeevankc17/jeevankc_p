@@ -11,18 +11,28 @@ const skills = [
 
 const experience = [
   {
-    role: 'IT Entrepreneur & Software Developer',
-    company: 'Independent',
-    duration: '2020 - Present',
-    description: 'Building software solutions and shaping businesses with over half a decade of hands-on experience in computer engineering and software development.'
+    role: 'Business Process Automation Specialist',
+    company: 'Proma.ai',
+    duration: 'Feb 2025 - Present',
+    description:
+      'Led AI-driven business process automation and composable workflow solutions using Proma.ai’s enterprise platform. Built intelligent systems that automate complex workflows, connect business processes end-to-end, and eliminate manual handoffs while enabling real-time decision-making. Leveraged AI system generation, smart data modeling, and integrated automation to design scalable ERP-style solutions encompassing finance, HR, inventory, and operations, improving efficiency and business agility across organizations.'
   },
   {
-    role: 'ERP Implementation Specialist',
-    company: 'Various Organizations',
-    duration: '2019 - 2020',
-    description: 'Professional ERP implementation experience with robust understanding of business domains and tech-innovation with real business value.'
+    role: 'Web Developer',
+    company: 'Innovators Home 3D',
+    duration: 'Aug 2022 - May 2024',
+    description:
+      'Worked on 3D experiences and AR/VR technologies for enterprise and end users, delivering interactive and immersive web-based solutions.'
+  },
+  {
+    role: 'Web3 Developer',
+    company: 'Freelance',
+    duration: 'Jul 2021 - Feb 2024',
+    description:
+      'Contributed to blockchain and DApp development, analyzed development workflows, and researched standards and best practices for Web3 project implementation.'
   }
 ];
+
 
 export default function AboutPage() {
   return (

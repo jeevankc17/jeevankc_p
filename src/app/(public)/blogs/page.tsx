@@ -34,7 +34,7 @@ export default async function BlogsPage() {
   const blogs = await getBlogs();
 
   return (
-    <main className="container py-12 md:py-20">
+    <main className="container py-12 md:py-20 mx-auto">
       <section className="text-center">
         <h1 className="text-4xl font-bold tracking-tight">From the Blog</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -62,6 +62,7 @@ export default async function BlogsPage() {
                   <CardDescription>
                     {new Date(blog.createdAt).toLocaleDateString('en-US', {
                       year: 'numeric', month: 'long', day: 'numeric',
+                      timeZone: 'UTC',
                     })}
                   </CardDescription>
                 </CardHeader>

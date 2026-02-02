@@ -73,7 +73,9 @@ export default async function DashboardPage() {
                   <TableRow key={blog.id}>
                     <TableCell className="font-medium">{blog.title}</TableCell>
                     <TableCell>
-                      {new Date(blog.createdAt).toLocaleDateString()}
+                      {new Date(blog.createdAt).toLocaleDateString(undefined, {
+                        timeZone: 'UTC',
+                      })}
                     </TableCell>
                     <TableCell className="text-right">
                       <BlogActions blogId={blog.id} />

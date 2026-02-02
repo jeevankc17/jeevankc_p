@@ -198,6 +198,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ id:
                 year: "numeric",
                 month: "long",
                 day: "numeric",
+                timeZone: 'UTC',
               })}
             </span>
             <span>•</span>

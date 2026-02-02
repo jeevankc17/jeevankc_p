@@ -36,7 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} min-h-screen bg-background font-sans antialiased`}
+        className={cn(
+          GeistSans.variable,
+          GeistMono.variable,
+          'min-h-screen bg-background font-sans antialiased'
+        )}
+        suppressHydrationWarning
       >
         <AuthProvider>
           <Toaster richColors />

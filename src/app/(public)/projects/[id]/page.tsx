@@ -96,7 +96,7 @@ export default async function SingleProjectPage({ params }: { params: Promise<{ 
   }
 
   return (
-    <main className="container max-w-5xl py-12 md:py-20">
+    <main className="container max-w-5xl py-12 md:py-20 mx-auto">
       <article>
         <header className="mb-8">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">{project.title}</h1>
@@ -106,6 +106,7 @@ export default async function SingleProjectPage({ params }: { params: Promise<{ 
               year: 'numeric',
               month: 'long',
               day: 'numeric',
+              timeZone: 'UTC',
             })}
           </p>
 
