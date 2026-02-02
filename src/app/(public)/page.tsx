@@ -102,7 +102,7 @@ export default async function HomePage() {
       </section>
 
       {/* What I Do Section */}
-      <section className="border-y bg-muted/50 p-16 ">
+      <section className="border-y bg-muted/50 px-4 py-8 md:px-16 md:py-16">
         <div className="container">
           <h2 className="text-center text-3xl font-bold tracking-tight mb-12">
             What I Do
@@ -146,7 +146,7 @@ export default async function HomePage() {
 
       {/* Featured Projects */}
       {projects.length > 0 && (
-        <section className="container p-16">
+        <section className="container px-4 py-8 md:px-16 md:py-16 mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold tracking-tight">
               Featured Projects
@@ -206,7 +206,7 @@ export default async function HomePage() {
 
       {/* Latest Blog Posts */}
       {blogs.length > 0 && (
-        <section className="border-t bg-muted/50 p-16">
+        <section className="border-t bg-muted/50 px-4 py-8 md:px-16 md:py-16 mx-auto">
           <div className="container">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-3xl font-bold tracking-tight">
@@ -262,7 +262,7 @@ export default async function HomePage() {
       )}
 
       {/* CTA Section */}
-      <section className="container p-20 mx-auto">
+      <section className="container px-4 py-8 md:px-20 md:py-20 mx-auto">
         <Card className="bg-primary text-primary-foreground">
           <CardContent className="flex flex-col items-center gap-4 py-12 text-center">
             <h2 className="text-3xl font-bold">Let's Work Together</h2>
@@ -270,9 +270,11 @@ export default async function HomePage() {
               I'm always interested in hearing about new projects and
               opportunities.
             </p>
-            <a href="mailto:jkc5186@gmail.com" className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+            <Button asChild size="lg">
+              <a href="mailto:jkc5186@gmail.com" className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
                 Get In Touch <Mail className="ml-2 h-4 w-4" />
               </a>
+            </Button>
           </CardContent>
         </Card>
       </section>
