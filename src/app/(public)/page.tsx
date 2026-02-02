@@ -1,33 +1,52 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Github, Linkedin, Mail, Code2, Briefcase, BookOpen } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Mail,
+  Code2,
+  Briefcase,
+  BookOpen,
+} from "lucide-react";
 
-// Featured projects preview 
+// Featured projects preview
 async function getFeaturedProjects() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/projects`, {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/projects`,
+      {
+        next: { revalidate: 3600 },
+      },
+    );
     if (!res.ok) return [];
     const data = await res.json();
-    return data.data.slice(0, 3); 
+    return data.data.slice(0, 3);
   } catch (error) {
     return [];
   }
 }
 
-
 async function getLatestBlogs() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/blogs`, {
-      next: { revalidate: 60 },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/blogs`,
+      {
+        next: { revalidate: 60 },
+      },
+    );
     if (!res.ok) return [];
     const data = await res.json();
-    return data.data.slice(0, 3); 
+    return data.data.slice(0, 3);
   } catch (error) {
     return [];
   }
@@ -40,20 +59,21 @@ export default async function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="container flex flex-col items-center gap-8 py-20 md:py-32">
+      <section className="container flex flex-col items-center gap-8 py-20 md:py-32 mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
           <Badge variant="secondary" className="px-4 py-1">
-            Full-Stack Developer
+            Computer Engineer & IT Entrepreneur
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Hi, I'm{' '}
+            Hey, I'm{" "}
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Yeamin Madbor
+              Jeevan
             </span>
           </h1>
           <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-            I build modern web applications with Next.js, React, and TypeScript. 
-            Passionate about creating elegant solutions to complex problems.
+            A framework agnostic, principle first computer engineer, IT entrepreneur, and software developer from
+            Nepal with over half a decade of experience in building software and
+            shaping businesses.
           </p>
           <div className="flex flex-wrap gap-4 mt-4">
             <Button asChild size="lg">
@@ -67,53 +87,56 @@ export default async function HomePage() {
           </div>
           <div className="flex gap-4 mt-6">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://github.com/yeaminstudent5598" target="_blank">
-                <Github className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="https://www.linkedin.com/in/yeamin-madbor-83b3302b8/" target="_blank">
+              <Link
+                href="https://www.linkedin.com/in/jeevankc17/"
+                target="_blank"
+              >
                 <Linkedin className="h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="yeaminstudent5598@gmail.com">
+            <a href="mailto:jkc5186@gmail.com" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
                 <Mail className="h-5 w-5" />
-              </Link>
-            </Button>
+              </a>
           </div>
         </div>
       </section>
 
       {/* What I Do Section */}
-      <section className="border-y bg-muted/50 p-16">
+      <section className="border-y bg-muted/50 p-16 ">
         <div className="container">
-          <h2 className="text-center text-3xl font-bold tracking-tight mb-12">What I Do</h2>
+          <h2 className="text-center text-3xl font-bold tracking-tight mb-12">
+            What I Do
+          </h2>
           <div className="grid gap-8 md:grid-cols-3">
             <Card>
               <CardHeader>
                 <Code2 className="h-10 w-10 text-primary mb-2" />
-                <CardTitle>Web Development</CardTitle>
+                <CardTitle>Principles-First Software Engineer</CardTitle>
                 <CardDescription>
-                  Building responsive and performant web applications using modern technologies
+                  Building software grounded in core computer science,
+                  correctness, performance, and long-term maintainability.
                 </CardDescription>
               </CardHeader>
             </Card>
+
             <Card>
               <CardHeader>
                 <Briefcase className="h-10 w-10 text-primary mb-2" />
-                <CardTitle>Full-Stack Solutions</CardTitle>
+                <CardTitle>System Design & Architecture</CardTitle>
                 <CardDescription>
-                  End-to-end development from database design to user interface implementation
+                  Designing scalable systems with clear boundaries, efficient
+                  data flow, and real-world operational awareness.
                 </CardDescription>
               </CardHeader>
             </Card>
+
             <Card>
               <CardHeader>
                 <BookOpen className="h-10 w-10 text-primary mb-2" />
-                <CardTitle>Technical Writing</CardTitle>
+                <CardTitle>Databases, AI & Automation</CardTitle>
                 <CardDescription>
-                  Sharing knowledge through blog posts and documentation
+                  Leveraging strong data foundations, intelligent systems, and
+                  automation to reduce complexity and drive business impact.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -125,7 +148,9 @@ export default async function HomePage() {
       {projects.length > 0 && (
         <section className="container p-16">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold tracking-tight">Featured Projects</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              Featured Projects
+            </h2>
             <Button asChild variant="ghost">
               <Link href="/projects">
                 View All <ArrowRight className="ml-2 h-4 w-4" />
@@ -134,9 +159,10 @@ export default async function HomePage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project: any) => {
-              const techList = typeof project.technologies === 'string' 
-                ? project.technologies.split(',').map((t: string) => t.trim())
-                : [];
+              const techList =
+                typeof project.technologies === "string"
+                  ? project.technologies.split(",").map((t: string) => t.trim())
+                  : [];
 
               return (
                 <Card key={project.id} className="group p-6 overflow-hidden">
@@ -151,7 +177,7 @@ export default async function HomePage() {
                         />
                       </div>
                     )}
-                    <CardHeader className='p-0'>
+                    <CardHeader className="p-0">
                       <CardTitle className="group-hover:text-primary mt-2 transition-colors">
                         {project.title}
                       </CardTitle>
@@ -161,11 +187,13 @@ export default async function HomePage() {
                     </CardHeader>
                     <CardContent>
                       <div className="flex flex-wrap gap-2">
-                        {techList.slice(0, 3).map((tech: string, index: number) => (
-                          <Badge key={index} variant="secondary">
-                            {tech}
-                          </Badge>
-                        ))}
+                        {techList
+                          .slice(0, 3)
+                          .map((tech: string, index: number) => (
+                            <Badge key={index} variant="secondary">
+                              {tech}
+                            </Badge>
+                          ))}
                       </div>
                     </CardContent>
                   </Link>
@@ -181,7 +209,9 @@ export default async function HomePage() {
         <section className="border-t bg-muted/50 p-16">
           <div className="container">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold tracking-tight">Latest Blog Posts</h2>
+              <h2 className="text-3xl font-bold tracking-tight">
+                Latest Blog Posts
+              </h2>
               <Button asChild variant="ghost">
                 <Link href="/blogs">
                   View All <ArrowRight className="ml-2 h-4 w-4" />
@@ -202,23 +232,23 @@ export default async function HomePage() {
                         />
                       </div>
                     )}
-                    <CardHeader className='p-0'>
+                    <CardHeader className="p-0">
                       <CardTitle className="group-hover:text-primary mt-4 transition-colors line-clamp-2">
                         {blog.title}
                       </CardTitle>
-                      <CardDescription className='p-0'>
-                        {new Date(blog.createdAt).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
+                      <CardDescription className="p-0">
+                        {new Date(blog.createdAt).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
                         })}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className='p-0'>
+                    <CardContent className="p-0">
                       <div
                         className="text-sm text-muted-foreground line-clamp-3"
                         dangerouslySetInnerHTML={{
-                          __html: blog.content.substring(0, 150) + '...',
+                          __html: blog.content.substring(0, 150) + "...",
                         }}
                       />
                     </CardContent>
@@ -231,18 +261,17 @@ export default async function HomePage() {
       )}
 
       {/* CTA Section */}
-      <section className="container p-20">
+      <section className="container p-20 mx-auto">
         <Card className="bg-primary text-primary-foreground">
           <CardContent className="flex flex-col items-center gap-4 py-12 text-center">
             <h2 className="text-3xl font-bold">Let's Work Together</h2>
             <p className="max-w-[600px] text-primary-foreground/90">
-              I'm always interested in hearing about new projects and opportunities.
+              I'm always interested in hearing about new projects and
+              opportunities.
             </p>
-            <Button asChild size="lg" variant="secondary">
-              <Link href="mailto:your.email@example.com">
+            <a href="mailto:jkc5186@gmail.com" className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
                 Get In Touch <Mail className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+              </a>
           </CardContent>
         </Card>
       </section>

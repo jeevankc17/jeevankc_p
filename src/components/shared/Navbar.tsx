@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="container flex h-14 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <span className="font-bold text-lg">Yeamin Madbor</span>
+          <span className="font-bold text-lg">Jeevan KC</span>
         </Link>
 
         {/* Desktop Navigation */}

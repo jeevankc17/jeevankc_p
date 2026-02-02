@@ -8,10 +8,10 @@ import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: {
-    default: "Yeamin Madbor's Portfolio",
-    template: `%s | Yeamin Madbor`,
+    default: "Jeevan KC's Portfolio",
+    template: `%s | Jeevan KC`,
   },
-  description: 'A personal portfolio website showcasing projects and skills by Yeamin Madbor, a full-stack developer.',
+  description: 'A personal portfolio website showcasing projects and skills by Jeevan KC, a computer engineer, IT entrepreneur, and software developer from Nepal.',
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: "Yeamin Madbor's Portfolio",
-    description: 'A personal portfolio website.',
+    title: "Jeevan KC's Portfolio",
+    description: 'A personal portfolio website showcasing projects and skills by Jeevan KC, a computer engineer and software developer from Nepal.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://yeaminmadbor.com',
+    url: 'https://jeevan-kc.com.np',
   },
 };
 
@@ -36,11 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          GeistSans.variable,
-          GeistMono.variable
-        )}
+        className={`${GeistSans.variable} ${GeistMono.variable} min-h-screen bg-background font-sans antialiased`}
       >
         <AuthProvider>
           <Toaster richColors />

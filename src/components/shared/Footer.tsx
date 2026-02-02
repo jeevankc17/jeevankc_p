@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t">
       <div className="container flex h-14 items-center justify-center">
         <p className="text-sm text-muted-foreground">
-          © {currentYear} Yeamin Madbor. All rights reserved.
+          © {currentYear} Jeevan KC. All rights reserved.
         </p>
       </div>
     </footer>

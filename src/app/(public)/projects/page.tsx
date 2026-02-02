@@ -42,7 +42,7 @@ export default async function ProjectsPage() {
         </p>
       </section>
 
-      <section className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <section className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center max-w-6xl mx-auto">
         {projects && projects.length > 0 ? (
           projects.map((project) => {
             // Parse features and technologies safely
