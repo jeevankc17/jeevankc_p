@@ -227,19 +227,23 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ id:
         {/* Author bio section */}
         <footer className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
           <div className="flex items-start gap-6">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <span className="text-2xl font-bold text-primary">A</span>
+            <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+              <Image
+                src="https://res.cloudinary.com/jeevankc17/image/upload/v1770086247/ClientServer_xlyg6t.png"
+                alt="Jeevan KC"
+                width={64}
+                height={64}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
-              <h3 className="font-bold text-lg">Author Name</h3>
+              <h3 className="font-bold text-lg">Jeevan KC</h3>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
                 Software developer and blogger passionate about web technologies, databases, and system design. 
                 Sharing knowledge to help others grow in their tech journey.
               </p>
               <div className="flex gap-4 mt-4">
-                <a href="#" className="text-sm text-primary hover:underline">Twitter</a>
-                <a href="#" className="text-sm text-primary hover:underline">GitHub</a>
-                <a href="#" className="text-sm text-primary hover:underline">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/jeevankc17/" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">LinkedIn</a>
               </div>
             </div>
           </div>
