@@ -5,8 +5,8 @@ import bcrypt from 'bcryptjs';
 const prisma = new PrismaClient();
 
 async function main() {
-  const adminEmail = 'jkc5186@gmail.com';
-  const adminPassword = 'Test@123';
+  const adminEmail = 'admin@admin.com';
+  const adminPassword = 'Admin@123';
 
   const existingAdmin = await prisma.user.findUnique({ where: { email: adminEmail } });
   if (existingAdmin) {
@@ -16,12 +16,12 @@ async function main() {
 
   const hashedPassword = await bcrypt.hash(adminPassword, 10);
 
-// prisma/seed.ts বা user.service.ts-এ
+// prisma/seed.ts 
 await prisma.user.create({
   data: {
     email: adminEmail,
     password: hashedPassword,
-    role: 'ADMIN', // <-- এই লাইনটি নিশ্চিত করুন
+    role: 'ADMIN',
   },
 });
   console.log('Admin user created successfully.');
