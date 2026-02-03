@@ -229,7 +229,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ id:
           <div className="flex items-start gap-6">
             <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
               <Image
-                src="https://res.cloudinary.com/jeevankc17/image/upload/v1770086247/ClientServer_xlyg6t.png"
+                src="https://res.cloudinary.com/jeevankc17/image/upload/v1770086725/llpp_v7ssqd.jpg"
                 alt="Jeevan KC"
                 width={64}
                 height={64}
